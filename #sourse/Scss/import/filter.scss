@@ -1,0 +1,250 @@
+.filter {
+	margin: 33px auto 73px auto;
+	@extend %wc;
+	@media (max-width : 1024px) {
+		margin: 30px auto 63px auto;
+	}
+	@media (max-width : 768px) {
+		margin: 28px auto 50px auto;
+	}
+	@media (max-width : 480px) {
+		margin: 25px auto 40px auto;
+	}
+}
+.filter-nav {
+	margin-bottom: 29px;
+	border: solid #e1e1e1;
+	border-width: 1px 0 1px 0;
+}
+.filter-nav-list {
+	@extend %flex;
+	justify-content: center;
+	padding: 15px 0 14px 0;
+	@media (max-width : 680px) {
+		flex-wrap: wrap;
+		margin-top: -20px;
+	}
+}
+.filter-list-item {
+	margin-left: 32px;
+	@media (max-width : 680px) {
+		margin-top: 20px;
+	}
+	&:first-child{
+		margin-left: 0;
+	}
+	&:first-child .filter-item-link{
+		padding-left: 0;
+	}
+	&:first-child .filter-item-link:before{
+		display: none;
+	}
+}
+.filter-item-link{
+	color: #777777;
+	font-family: Roboto-Bold;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 30px;
+	padding-left: 15px;
+	display: inline-block;
+	position: relative;
+	&.active{
+		color: #000;
+	}
+	&:hover{
+		color: #4a4a4a;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 1px;
+		background-color: #d7d7d7;
+		transform: rotate(25deg);
+	}
+	
+}
+.filter-body {
+	@extend %flex;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.filter-section-img{
+	cursor: pointer;
+	flex: 0 0 auto;
+	position: relative;
+	margin: 35px 0 0 30px;
+	height: 200px;
+	flex: 0 0 30%;
+	display: flex;
+	overflow: hidden;
+	&:nth-child(1),
+	&:nth-child(2),
+	&:nth-child(3){
+		margin-top: 0;
+	}
+	@media (max-width : 1024px) {
+		flex: 0 0 40%;
+		margin: 30px 0 0 27px;
+		&:nth-child(3){
+			margin-top: 30px;
+		}
+	}
+	@media (max-width : 768px) {
+		flex: 0 0 55%;
+		&:nth-child(2n+2){
+			display: none;
+		}
+		&:nth-child(1n+1){
+			margin-top: 25px;
+		}
+	}
+	@media (max-width : 480px) {
+		flex: 0 0 80%;
+	}
+	&:hover img{
+		transform: scale(1.3);
+	}
+	&:hover .filter-img-bg {
+		opacity: 0.5;
+		transform: scale(1);
+	}
+	&:hover .filter-img-zoom {
+		opacity: 1;
+	}
+	img{
+		width: 100%;
+		transition: all 5s ease 0.3s;
+		object-fit: cover;
+	}
+	&.hide{
+		display: none;
+	}
+	&.active{
+		margin-top: inherit;
+	}
+}
+.filter-img-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	opacity: 0;
+	transform: scale(0);
+	transform-origin: 0 0;
+	transition: all 0.3s ease 0s;
+}
+.filter-img-zoom {
+	position: absolute;
+	opacity: 0;
+	height: 40px;
+	width: 2px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease 0s;
+	@media (max-width : 768px) {
+		height: 30px;
+	}
+	&:before,
+	&:after{
+		transition: all 0.5s ease 0s;
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 2px;
+		height: 100%;
+		background-color: #fff;
+	}
+	&:after{
+		transform: rotate(90deg);
+	}
+}
+
+.filter-btn {
+	margin-top: 35px;
+	text-align: center;
+	@media (max-width : 1024px) {
+		margin-top: 30px;
+	}
+	@media (max-width : 768px) {
+		margin-top: 20px;
+	}
+	a{
+		font-family: "Roboto-Bold";
+	    font-size: 14px;
+	    font-weight: 700;
+	    text-transform: uppercase;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 125px;
+		height: 30px;
+		background-color: #777;
+		color: #fff;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			background-color: #4a4a4a;
+		}
+	}
+}
+.filter-popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	visibility: hidden;
+	padding-bottom: 80px;
+	&.active{
+		opacity: 1;
+		visibility: visible;
+		.filter-pupup-contanin{
+			transform: perspective(2000px) translate(0px,0px) rotate(0deg);
+			opacity: 1;
+		}
+	}
+}
+.filter-popup-body {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 10px;
+
+}
+
+.filter-pupup-contanin {
+	width: 30%;
+	position: relative;
+	transform: perspective(2000px) translate(0px,-100%) rotateX(45deg);
+	opacity: 0;
+	transition: all 0.8s ease 0s; 
+}
+.filter-popup-close {
+	font-size: 20px;
+	font-family: "Roboto-regular";
+	font-weight: 400;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #000;
+	text-decoration: none;
+}
+.filter-popup-img {
+	width: 100%;
+	img{
+		width: 100%;
+	}
+}

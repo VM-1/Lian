@@ -1,0 +1,55 @@
+@import "import/nullstyle.scss";
+@import "import/font.scss";
+@import "import/header.scss";
+@import "import/footer.scss";
+@import "import/mixin.scss";
+@import "import/filter.scss";
+
+.heading {
+	margin-top: 90px;
+	background: url(../img/blog-bg.jpg) center right no-repeat #e2e2e2;
+	padding: 115px 0 78px 0;
+	@media (max-width : 1024px) {
+		padding: 95px 0 65px 0;
+	}
+	@media (max-width : 768px) {
+		margin-top: 70px;
+		background: none;
+		background-color: #f0f0f2;
+		padding: 75px 0 53px 0;
+	}
+	@media (max-width : 480px) {
+		padding: 40px 0 28px 0;
+	}
+}
+.heading-inner {
+	@extend %wc;
+}
+.heading-title {
+	color: #ffffff;
+	@include adaptiv-font(48,28);
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 9px 36px 9px 34px ; 
+	background-color: #000;
+	letter-spacing: 4.8px;
+	@media (max-width : 1024px) {
+		
+	}
+	@media (max-width : 480px) {
+		padding: 0 25px 0 23px;
+	}
+	@media (max-width : 416px) {
+		line-height: 50px;
+	}
+}
+.heading-subtitle {
+	color: #000000;
+	@include adaptiv-font(18,16);
+	text-transform: uppercase;
+	letter-spacing: 7.2px;
+	margin: 44px 0 0 0;
+	@media (max-width : 768px) {
+		margin: 30px 0 0 0;
+	}
+}

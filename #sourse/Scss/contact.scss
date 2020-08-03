@@ -1,0 +1,428 @@
+@import "import/nullstyle.scss";
+@import "import/font.scss";
+@import "import/header.scss";
+@import "import/footer.scss";
+@import "import/mixin.scss";
+@import "import/filter.scss";
+
+.heading {
+	margin-top: 90px;
+	background: url(../img/portfolio-bg.png) center right no-repeat #e2e2e2;
+	padding: 115px 0 78px 0;
+	@media (max-width : 1024px) {
+		padding: 95px 0 65px 0;
+	}
+	@media (max-width : 768px) {
+		margin-top: 70px;
+		background: none;
+		background-color: #f0f0f2;
+		padding: 75px 0 53px 0;
+	}
+	@media (max-width : 480px) {
+		padding: 40px 0 28px 0;
+	}
+}
+.heading-inner {
+	@extend %wc;
+}
+.heading-title {
+	color: #ffffff;
+	@include adaptiv-font(48,28);
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 9px 36px 9px 34px ; 
+	background-color: #000;
+	letter-spacing: 4.8px;
+	@media (max-width : 480px) {
+		padding: 8px 25px 8px 23px;
+	}
+	@media (max-width : 330px) {
+		padding: 6px 20px 6px 18px;
+	}
+}
+.heading-subtitle {
+	color: #000000;
+	@include adaptiv-font(18,16);
+	text-transform: uppercase;
+	letter-spacing: 7.2px;
+	margin: 44px 0 0 0;
+	@media (max-width : 768px) {
+		margin: 30px 0 0 0;
+	}
+	@media (max-width : 391px) {
+		line-height: 25px;
+	}
+}
+.contact {
+	@extend %flex;
+	@extend %wc;
+	margin: 82px auto 79px auto;
+	@media (max-width : 1024px) {
+		margin: 75px auto 73px auto;
+	}
+	@media (max-width : 768px) {
+		display: block;
+		margin: 55px auto 53px auto;
+	}
+	@media (max-width : 480px) {
+		margin: 40px auto 38px auto;
+	}
+}
+.contact-info {
+	flex: 0 0 auto;
+	@media (max-width : 768px) {
+		text-align: center;	
+	}
+}
+.contact-info-heading {
+	padding-bottom: 18px;
+	position: relative;
+	margin-bottom: 45px;
+	@media (max-width : 1024px) {
+		margin-bottom: 40px;
+	}
+	@media (max-width : 768px) {
+		margin-bottom: 30px;
+	}
+	@media (max-width : 480px) {
+		margin-bottom: 25px;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 60px;
+		height: 1px;
+		background-color: #000000;
+		@media (max-width : 768px) {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+.contact-info-title {
+	color: #000000;
+	@include adaptiv-font(30,22);	
+	letter-spacing: 12px;
+	text-transform: uppercase;
+	margin-bottom: 17px;
+	@media (max-width : 768px) {
+		margin-bottom: 14px;
+	}
+}
+.contact-info-text{
+	letter-spacing: 0.4px;
+	color: #2f302f;
+	font-family: Roboto;
+	@include adaptiv-font(16,15);
+	@media (max-width : 342px) {
+		line-height: 1.5;
+	}
+}
+.cintact-info-list {
+}
+.contact-info-item {
+	letter-spacing: 0.38px;
+}
+.contact-item-text {
+	color: #777777;
+	font-family: "Roboto-Regular";
+	font-weight: 400;
+	margin-bottom: 35px;
+	@media (max-width : 1024px) {
+		margin-bottom: 30px;
+	}
+	@media (max-width : 768px) {
+		margin-bottom: 25px;
+	}
+	@media (max-width : 480px) {
+		margin-bottom: 20px;
+	}
+}
+.contact-item-tel{
+	color: #555555;
+	font-family: "Roboto-Bold";
+	font-weight: 700;
+	&:first-child{
+		margin-bottom: 11px;
+	}
+}
+.contact-item-bold{
+	padding-right: 10px;
+	color: #222222;
+	font-family: "Roboto-Bold";
+	font-weight: 700;
+}
+.contact-title {
+	text-align: center;
+	color: #000000;
+	@include adaptiv-font(20,18);
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+.contact-form {
+	@extend %flex;
+	flex-wrap: wrap;
+	flex: 0 0 748px/1140px*100%;
+	@media (max-width : 1024px) {
+		flex: 0 0 55%;
+	}
+	@media (max-width : 768px) {
+		display: block;
+	}
+}
+.contact-form-input {
+	flex: 0 0 250px/810px*100%;
+	position: relative;
+	@media (max-width : 768px) {
+		margin-top: 25px;
+	}
+	@media (max-width : 480px) {
+		margin-top: 20px;
+	}
+	&:focus-within{
+		&:before{
+			opacity: 0.3;
+		}
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 3px;
+		background-color: #000000;
+		opacity: 0;
+		transition: opacity 0.3s ease 0s;
+	}
+	input{
+		padding: 14px 0 14px 14px;
+		border: 1px solid #e1e1e1;
+		width: 100%;
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	input::-moz-placeholder { /* Firefox 19+ */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	input:-ms-input-placeholder { /* IE 10+ */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	input:-moz-placeholder { /* Firefox 18- */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+}
+.contact-form-textarea {
+	flex: 0 0 100%;
+	border: 1px solid #e1e1e1;
+	height: 112px;
+	position: relative;
+	margin: 22px 0 24px 0;
+	&:focus-within{
+		&:before{
+			opacity: 0.3;
+		}
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 3px;
+		background-color: #000000;
+		opacity: 0;
+		transition: opacity 0.3s ease 0s;
+	}
+	textarea{
+		padding: 16px 0 0 15px;
+		width: 100%;
+		height: 100%;
+		resize: none;
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	textarea::-moz-placeholder { /* Firefox 19+ */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	textarea:-ms-input-placeholder { /* IE 10+ */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+	textarea:-moz-placeholder { /* Firefox 18- */
+		color: #c4c4c4;
+		font-family: Roboto;
+		font-size: 14px;
+	}
+}
+.contact-form-btn {
+	background-color: #000000;
+	padding: 12px 0 13px 0;
+	width: 195px;
+	color: #ffffff;
+	font-family: "Roboto-Bold";
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.79px;
+	transition: all 0.5s ease 0s;
+	@media (max-width : 768px) {
+		width: 170px;
+		display: block;
+		margin: 0 auto;
+	}
+	&:hover{
+		background-color: #2a2a2a;
+	}
+}
+.map {
+	height: 360px;
+	@media (max-width : 1024px) {
+		height: 300px;
+	}
+	@media (max-width : 768px) {
+		height: 250px;
+	}
+}
+.values {
+	margin: 71px 0 62px 0;
+	@media (max-width : 1024px) {
+		margin: 60px 0 50px 0;
+	}
+	@media (max-width : 768px) {
+		margin: 45px 0 40px 0;
+	}
+	@media (max-width : 480px) {
+		margin: 40px 0 35px 0;
+	}
+}
+.values-heading {
+	text-align: center;
+	width: 600px/1600px*100%;
+	margin: 0 auto 63px auto;
+	@media (max-width : 1024px) {
+		width: 45%;
+		margin: 0 auto 55px auto;
+	}
+	@media (max-width : 768px) {
+		width: 60%;
+		margin: 0 auto 35px auto;
+	}
+	@media (max-width : 480px) {
+		width: 90%;
+		margin: 0 auto 30px auto;
+	}
+}
+.values-heading-title {
+	color: #000000;
+	@include adaptiv-font(30,22);
+	letter-spacing: 12px;
+	text-transform: uppercase;
+	margin-bottom: 42px;
+	@media (max-width : 1024px) {
+		margin-bottom: 35px;
+	}
+	@media (max-width : 768px) {
+		margin-bottom: 28px;
+	}
+	@media (max-width : 480px) {
+		margin-bottom: 22px;
+	}
+}
+.values-heading-text {
+	color: #777777;
+	font-size: 14px;
+	font-family: "Roboto-Regular";
+	font-weight: 400;
+	letter-spacing: 0.35px;
+	line-height: 30px;
+}
+.values-feauters {
+	@extend %wc;
+	@extend %flex;
+	align-items: flex-start;
+	@media (max-width : 768px) {
+		display: block;
+	}
+}
+.values-feauters-section {
+	flex: 0 0 354px/1140px*100%;
+	@media (max-width : 1024px) {
+		flex: 0 0 30%;
+	}
+	@media (max-width : 768px) {
+		text-align: center;
+		margin-top: 30px;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	@media (max-width : 480px) {
+		margin-top: 25px;
+	}
+}
+.vaues-section-img {
+	margin-bottom: 27px;
+	@media (max-width : 768px) {
+		width: 60%;
+		margin: 0 auto 25px auto;
+		position: relative;
+		height: 0;
+		padding-bottom: 50%;
+	}
+	@media (max-width : 580px) {
+		width: 80%;
+		padding-bottom: 58%;
+	}
+	@media (max-width : 480px) {
+		width: 100%;
+	}
+	img{
+		width: 100%;
+		@media (max-width : 768px) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+.values-section-title {
+	color: #000000;
+	@include adaptiv-font(18,16);
+	letter-spacing: 7.2px;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+.values-section-text {
+	color: #777777;
+	font-family: "Roboto-Regular";
+	font-weight: 400;
+	@include adaptiv-font(14,13);
+	letter-spacing: 0.35px;
+	line-height: 30px;
+}
